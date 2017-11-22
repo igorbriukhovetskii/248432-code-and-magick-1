@@ -37,5 +37,26 @@ window.renderStatistics = function (ctx, names, times) {
     drawRectangle(cloudColor, cloudXcoordinate, cloudYcoordinate, cloudWidth, cloudHeight);
   };
 
+  var statisticText = ['Ура вы победили!', 'Список результатов:'];
+  var font = '16px PT Mono';
+  var fontColor = 'rgba(0, 0, 0, 1)';
+  var statisticTextXcoordinate = 120;
+  var statisticTextYcoordinate = 50;
+  var interlineage = 20;
+
+  // Вывод заголовочного текста для статистики
+  var printText = function () {
+    var initialY = statisticTextYcoordinate;
+
+    ctx.font = font;
+    ctx.fillStyle = fontColor;
+
+    statisticText.forEach(function (line) {
+      ctx.fillText(line, statisticTextXcoordinate, initialY);
+      initialY += interlineage;
+    });
+  };
+
   drawCloud();
+  printText();
 };
