@@ -46,14 +46,14 @@ window.renderStatistics = function (ctx, names, times) {
 
   // Вывод заголовочного текста для статистики
   var printText = function () {
-    var initialY = statisticTextYcoordinate;
+    var currentYcoordinate = statisticTextYcoordinate;
 
     ctx.font = font;
     ctx.fillStyle = fontColor;
 
     statisticText.forEach(function (line) {
-      ctx.fillText(line, statisticTextXcoordinate, initialY);
-      initialY += interlineage;
+      ctx.fillText(line, statisticTextXcoordinate, currentYcoordinate);
+      currentYcoordinate += interlineage;
     });
   };
 
